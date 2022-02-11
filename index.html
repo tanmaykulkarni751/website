@@ -1,149 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tanmay's Thoughts</title>
 
-  <title>Tanmay's Thoughts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,200;0,400;0,600;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/styles.css" media="screen" />
+    <link rel="author" href="tanmaykulkarni.html" />
+  </head>
 
-  <link rel="stylesheet" href="./styles/external.css" media="screen" />
-  <link rel="author" href="tanmaykulkarni.html" />
-</head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <ul>
+          <li>Tanmay's Thoughts</li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#writings">Writings</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+          <li><a href="/experiment.html">Experiment</a></li>
+        </ul>
+      </nav>
+    </header>
 
-<body>
-  <header>
-    <nav id="navbar">
-      <ul>
-        <li><a href="#about">About Me</a></li>
-        <li><a href="#writings">Writings</a></li>
-        <li><a href="#contact">Contact Me</a></li>
-        <li><a href="/experiment.html">Experiment</a></li>
-      </ul>
-    </nav>
-  </header>
+    <hr />
 
-  <hr />
+    <main>
+      <article>
+        <h1>Tanmay's Thoughts</h1>
+        <section id="about">
+          <h2>About Me</h2>
+          <p>
+            My name is Tanmay. I am a third year Philosophy and Computer Science
+            major at UCSD. Besides <code>coding</code>
+            <em>beautiful</em> websites, I enjoy reading Philosophy (Animal
+            Ethics, in particular).
 
-  <main>
-    <article>
-      <h1>Tanmay's Thoughts</h1>
-      <section id="about">
-        <h2>About Me</h2>
-        <p>
-          My name is Tanmay. I am a third year Philosophy and Computer Science
-          major at UCSD. Besides <code>coding</code>
-          <em>beautiful</em> websites, I enjoy reading Philosophy (Animal
-          Ethics, in particular).
-
-          <br />
-
-          <a>Below</a> is a collection of some of my writings on varied topics
-          within Philosphy.
-        </p>
-        <figure>
-          <picture>
-            <img src="./images/me.png" alt="Me" height="400" />
-          </picture>
-          <figcaption>That's me</figcaption>
-        </figure>
-        <table style="border: 1px solid black">
-          <caption>My favorite books: </caption>
-          <colgroup>
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-            <col />
-          </colgroup>
-          <thead>
-            <tr>
-              <th>Current</th>
-              <th>&nbsp;</th>
-              <th>&nbsp;</th>
-              <th>Fiction</th>
-              <th>&nbsp;</th>
-              <th>&nbsp;</th>
-              <th>Ethics</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>This Is <span style="color:green">Vegan</span> Propaganda by Ed Winters</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>The Godfather by Mario Puzo</td>
-              <td>&nbsp;</td>
-              <td>&nbsp;</td>
-              <td>Animal Liberation by Peter Singer</td>
-            </tr>
-          </tbody>
-        </table>
-      </section>
-
-      <hr />
-
-      <section id="writings">
-        <h2>Writings</h2>
-        <ol>
-            <li><a href="papers/justice.html">Can Justice Exist Between Humans and Animals? An Aristotelian
-                Analysis.</a></li>
-            <li><a href="papers/contractarianism.html">Do the Objections Towards Contractarianism Hold?</a></li>
-        </ol>
-      </section>
-
-      <hr />
-
-      <section id="contact">
-        <h2>Contact</h2>
-        <form>
-          <fieldset>
-            <legend>I'd love to hear your thoughts!</legend>
-            <label for="name"> Name: </label>
-            <input type="text" name="name" id="name" autofocus required />
             <br />
-            <label for="email"> Email: </label>
-            <input type="email" name="email" id="email" autocomplete="on" required />
-            <br />
-            <label for="message">Message: </label>
-            <br />
-            <textarea id="message" name="message" rows="4" cols="50" required></textarea>
-            <br />
-            <label for="message-type"> Message type: </label>
-            <select name="message-type" id="message-type">
-              <optgroup label="Message Type">
-                <option value="Questions">Questions</option>
-                <option value="Objections/Critiques">Objections/Critiques</option>
-              </optgroup>
-            </select>
-            <br />
-            <label for="type">Message type: </label>
-            <input list="type-categories" name="type" id="type" />
-            <datalist id="type-categories">
-              <option value="Questions"></option>
-              <option value="Objections/Critiques"></option>
-            </datalist>
-          </fieldset>
-          <br />
-          <button type="submit">Submit</button>
-        </form>
-      </section>
-    </article>
-  </main>
 
-  <footer id="foot">
-    <h3>Tanmay Kulkarni</h3>
-    <details>
-      <summary>Find me</summary>
-      <ul>
-        <li><a href="https://www.instagram.com/tanmay_n_kulkarni/">Instagram</a></li>
-        <li><a href="mailto:tnkulkar@ucsd.edu">Email</a></li>
-      </ul>
-    </details>
-  </footer>
-</body>
+            <a>Below</a> is a collection of some of my writings on varied topics
+            within Philosphy.
+          </p>
+          <figure>
+            <picture>
+              <img src="./images/me.png" alt="Me" height="400" />
+            </picture>
+            <figcaption>That's me</figcaption>
+          </figure>
+          <table style="border: 1px solid black">
+            <caption>
+              My favorite books:
+            </caption>
+            <colgroup>
+              <col />
+              <col />
+              <col />
+              <col />
+              <col />
+              <col />
+              <col />
+            </colgroup>
+            <thead>
+              <tr>
+                <th>Current</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>Fiction</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+                <th>Ethics</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>
+                  This Is <span style="color: green">Vegan</span> Propaganda by
+                  Ed Winters
+                </td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>The Godfather by Mario Puzo</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>Animal Liberation by Peter Singer</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
 
+        <hr />
+
+        <section id="writings">
+          <h2>Writings</h2>
+          <ol>
+            <li>
+              <a href="papers/justice.html"
+                >Can Justice Exist Between Humans and Animals? An Aristotelian
+                Analysis.</a
+              >
+            </li>
+            <li>
+              <a href="papers/contractarianism.html"
+                >Do the Objections Towards Contractarianism Hold?</a
+              >
+            </li>
+          </ol>
+        </section>
+
+        <hr />
+
+        <section id="contact">
+          <h2>Contact</h2>
+          <form>
+            <fieldset>
+              <legend>I'd love to hear your thoughts!</legend>
+              <label for="name"> Name: </label>
+              <input type="text" name="name" id="name" autofocus required />
+              <br />
+              <label for="email"> Email: </label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                autocomplete="on"
+                required
+              />
+              <br />
+              <label for="message">Message: </label>
+              <br />
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                cols="50"
+                required
+              ></textarea>
+              <br />
+              <label for="message-type"> Message type: </label>
+              <select name="message-type" id="message-type">
+                <optgroup label="Message Type">
+                  <option value="Questions">Questions</option>
+                  <option value="Objections/Critiques">
+                    Objections/Critiques
+                  </option>
+                </optgroup>
+              </select>
+              <br />
+              <label for="type">Message type: </label>
+              <input list="type-categories" name="type" id="type" />
+              <datalist id="type-categories">
+                <option value="Questions"></option>
+                <option value="Objections/Critiques"></option>
+              </datalist>
+            </fieldset>
+            <br />
+            <button type="submit">Submit</button>
+          </form>
+        </section>
+      </article>
+    </main>
+
+    <footer id="foot">
+      <h3>Tanmay Kulkarni</h3>
+      <details>
+        <summary>Find me</summary>
+        <ul>
+          <li>
+            <a href="https://www.instagram.com/tanmay_n_kulkarni/">Instagram</a>
+          </li>
+          <li><a href="mailto:tnkulkar@ucsd.edu">Email</a></li>
+        </ul>
+      </details>
+    </footer>
+  </body>
 </html>
