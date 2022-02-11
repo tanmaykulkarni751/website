@@ -12,6 +12,7 @@
     background-color: #639FFD;
     position: sticky;
     top: 0;
+    font-weight: 200;
 }
 
 .navbar #title {
@@ -28,7 +29,6 @@
 
 .navbar ul li {
     font-size: 1.1rem;
-    font-weight: bold;
 }
 
 .navbar ul li a {
@@ -40,6 +40,37 @@
 
 .navbar ul li a:hover {
     background-color: #78AAFD;
-    color: black;
     box-shadow: 0 0 10px #78AAFD;
+}
+
+h1 {
+    display: none;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+}
+
+#about_me {
+    display: none;
+}
+
+#me {
+    display: flex;
+    font-weight: 200;
+    font-size: 25px;
+}
+
+#intro {
+    flex: 2;
+    margin: 10vw;
+}
+
+#image {
+    flex: 1;
+}
+
+#figcaption {
+    display: none;
 }
