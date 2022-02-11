@@ -7,11 +7,17 @@
 
 .navbar {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     background-color: #639FFD;
     position: sticky;
     top: 0;
+}
+
+.navbar #title {
+    color: white;
+    margin: 20px 0px;
+    font-size: 1.1rem;
 }
 
 .navbar ul {
@@ -21,7 +27,6 @@
 }
 
 .navbar ul li {
-    font-family: sans-serif;
     font-size: 1.1rem;
     font-weight: bold;
 }
