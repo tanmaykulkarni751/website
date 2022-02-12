@@ -126,3 +126,57 @@ a:hover {
     color: var(--primary);
 }
 
+#form {
+    margin: 25px 0px 25px 0px;
+}
+
+#form_legend {
+    display: none;
+}
+
+fieldset {
+    border-radius: 10px;
+    padding: 50px;
+    max-width: 80vw;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+}
+
+input:focus {
+    border: 3px solid #555;
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    padding: 10px;
+}
+
+textarea:focus {
+    border: 3px solid #555;
+}
+
+label {
+    font-size: 25px;
+    font-weight: 200;
+}
+
+#submit_form {
+    width: 100%;
+    margin-top: 25px;
+    font-size: 18px;
+    padding: 10px;
+    background-color: var(--secondary);
+    border: 1px solid var(--secondary);
+    color: white;
+}
+
+#submit_form:hover {
+    cursor: pointer;
+    background-color: var(--primary);
+}

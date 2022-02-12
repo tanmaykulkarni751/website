@@ -120,9 +120,9 @@
 
         <section class="contact">
           <h2>Contact</h2>
-          <form>
+          <form id="form">
             <fieldset>
-              <legend>I'd love to hear your thoughts!</legend>
+              <legend id="form_legend">I'd love to hear your thoughts!</legend>
               <label for="name"> Name: </label>
               <input type="text" name="name" id="name" autofocus required />
               <br />
@@ -145,7 +145,7 @@
                 required
               ></textarea>
               <br />
-              <label for="message-type"> Message type: </label>
+              <!-- <label for="message-type"> Message type: </label>
               <select name="message-type" id="message-type">
                 <optgroup label="Message Type">
                   <option value="Questions">Questions</option>
@@ -160,10 +160,10 @@
               <datalist id="type-categories">
                 <option value="Questions"></option>
                 <option value="Objections/Critiques"></option>
-              </datalist>
+              </datalist> -->
+            <button id="submit_form" type="submit">Submit</button>
             </fieldset>
             <br />
-            <button type="submit">Submit</button>
           </form>
         </section>
       </article>
