@@ -1,4 +1,6 @@
 * {
+    --primary: #639FFD;
+    --secondary: #78AAFD;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,7 +11,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #639FFD;
+    background-color: var(--primary);
     position: sticky;
     top: 0;
     font-weight: 200;
@@ -39,25 +41,31 @@
 }
 
 .navbar ul li a:hover {
-    background-color: #78AAFD;
-    box-shadow: 0 0 10px #78AAFD;
+    background-color: var(--secondary);
+    box-shadow: 0 0 10px var(--secondary);
 }
 
 h1 {
     display: none;
 }
 
-#about {
+.about {
     display: flex;
+    margin-top: 20px;
     height: 80vh;
     align-items: center;
     font-weight: 200;
     font-size: 25px;
 }
 
+#hi {
+    font-size: 50px;
+    font-weight: 400;
+    color: var(--secondary);
+}
+
 #about_me {
-    display: none;
-    
+    display: none;  
 }
 
 #intro {
@@ -67,8 +75,54 @@ h1 {
 
 #image {
     flex: 1;
+    height: 100%;
+}
+
+#tanmay_img {
+    height: 80vh;
 }
 
 #figcaption {
     display: none;
 }
+
+.writings {
+    display: flex;
+    flex-direction: column;
+    margin: 5vw 10vw;
+}
+
+h2 {
+    font-weight: 400;
+    font-size: 50px;
+    color: var(--secondary);
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    margin: 5vw 10vw;
+}
+
+#writings_list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    list-style: none;
+    font-size: 25px;
+    font-weight: 200;    
+}
+
+#writings_list li {
+    margin: 25px 0px 25px 0px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: var(--primary);
+}
+
