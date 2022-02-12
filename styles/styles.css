@@ -49,7 +49,7 @@ h1 {
     display: none;
 }
 
-.about {
+#about {
     display: flex;
     margin-top: 20px;
     height: 80vh;
@@ -86,7 +86,7 @@ h1 {
     display: none;
 }
 
-.writings {
+#writings {
     display: flex;
     flex-direction: column;
     margin: 5vw 10vw;
@@ -98,7 +98,7 @@ h2 {
     color: var(--secondary);
 }
 
-.contact {
+#contact {
     display: flex;
     flex-direction: column;
     margin: 5vw 10vw;
@@ -220,4 +220,35 @@ label {
 .footer ul li a:hover {
     background-color: var(--secondary);
     box-shadow: 0 0 10px var(--secondary);
+}
+
+#paper {
+    display: flex;
+    flex-direction: column;
+    margin: 3vw 10vw;
+    font-size: 25px;
+    font-weight: 200;
+}
+
+p {
+    margin-bottom: 25px;
+}
+
+#paper_title {
+    font-weight: 400;
+    font-size: 30px;
+    padding-top: 50px;
+    margin: 0vw 10vw;
+}
+
+aside {
+    margin-top: 25px;
+}
+
+#bib_title {
+    margin-bottom: 25px;
+}
+
+#bibliography-primary {
+    margin-bottom: 25px;
 }
