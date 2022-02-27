@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" src="scripts/customdialogs.js"></script>
+    <script type="text/javascript" src="scripts/purify.min.js"></script>
+    <title>Custom Dialogs</title>
+  </head>
+  <body>
+    <dialog id="alert">
+      <p>Alert pressed!</p>
+      <button id="ok-alert">Ok</button>
+    </dialog>
+
+    <dialog id="confirm">
+      <p>Do you confirm this?</p>
+      <button id="cancel-confirm">Cancel</button>
+      <button id="ok-confirm">Ok</button>
+    </dialog>
+
+    <dialog id="prompt">
+      <p>What is your name?</p>
+      <input id="input"/>
+      <br>
+      <br>
+      <button id="cancel-prompt">Cancel</button>
+      <button id="ok-prompt">Ok</button>
+    </dialog>
+
+    <button id="alert-button">Alert</button>
+    <button id="confirm-button">Confirm</button>
+    <button id="prompt-button">Prompt</button>
+
+    <br>
+
+    <output id="output"></output>
+  </body>
+</html>
