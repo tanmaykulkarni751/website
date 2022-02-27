@@ -13,4 +13,6 @@ window.addEventListener("DOMContentLoaded", () => {
         li.append(document.createTextNode(blogItem.title));
         blogList.appendChild(li);
     })
+
+    let addBlogButton = document.getElementById("add-blog");
 });
