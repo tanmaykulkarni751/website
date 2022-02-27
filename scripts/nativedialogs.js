@@ -10,7 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function alertClick() {
         output.textContent = "";
-        
+
         setTimeout(function () {
             alert("Alert pressed!");
         }, 0)
@@ -24,13 +24,39 @@ window.addEventListener("DOMContentLoaded", () => {
             output.textContent = `Confirm result : ${confirmValue}`;
         }, 0)
     }
+    
+    function promptClick() {
+        output.textContent = "";
 
-    function promptClick() { }
+        setTimeout(function () {
+            let promptValue = prompt("What is your name?");
+            if (promptValue == null || promptValue == "") {
+                output.textContent = `Prompt result : User didn't enter anything`;
+            } else {
+                output.innerHTML = `Prompt result : ${promptValue}`;
+            }
+        }, 0)
+    }
 
-    function saferPromptClick() { }
+    function saferPromptClick() {
+        output.textContent = "";
+
+        setTimeout(function () {
+            let promptValue = prompt("What is your name?");
+            if (promptValue == null || promptValue == "") {
+                output.textContent = `Prompt result : User didn't enter anything`;
+            } else {
+                let safePromptValue = DOMPurify.sanitize(promptValue);
+                output.innerHTML = `Prompt result : ${safePromptValue}`;
+            }
+        }, 0)
+     }
 
     alertButton.addEventListener("click", alertClick, true);
     confirmButton.addEventListener("click", confirmClick, true);
     promptButton.addEventListener("click", promptClick, true);
     saferPromptButton.addEventListener("click", saferPromptClick, true);
 });
+
+{/* <b onmouseover="alert('pwned')">Roll me</b> */}
+
