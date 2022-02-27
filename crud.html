@@ -1,15 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="scripts/crud.js" type="module"></script>
-    <title>CRUD Application</title>
-  </head>
-  <body>
-    <h1>List of Blogs</h1>
-    <ul id="blog-list"></ul>
-    <button id="add-blog">Add Blog</button>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="scripts/crud.js" type="module"></script>
+  <title>CRUD Application</title>
+</head>
+
+<body>
+  <h1>List of Blogs</h1>
+  <ul id="blog-list"></ul>
+  <dialog id="prompt">
+    <form>
+      <fieldset>
+        <p>Enter Blog Details</p>
+        <label for="Title">Title:</label><br>
+        <input name="Title" id="title" required /><br>
+        <label for="Date">Date:</label><br>
+        <input name="Date" id="date" required /><br>
+        <label for="Summary">Summary:</label><br>
+        <input name="Summary" id="summary" required><br><br>
+      </fieldset>
+      <button id="cancel-prompt">Cancel</button>
+      <button type="submit" id="ok-prompt">Ok</button>
+    </form>
+  </dialog>
+  <button id="prompt-button">Add Blog</button>
+  <script>
+    function editFunc(att) {
+      let title = att.id.substring(1);
+      // edit from localStorage
+      console.log(title);
+    }
+    function deleteFunc() {
+
+    }
+  </script>
+</body>
 </html>
