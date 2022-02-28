@@ -62,7 +62,6 @@
     function promptOk(titleToEdit) {
 
       let blogListArray = JSON.parse(localStorage.getItem("blogs"));
-      console.log(blogListArray)
       if (title.value != "" && date.value != "" && summary.value != "") {
 
         blogListArray.forEach(element => {
@@ -72,21 +71,28 @@
             element.summary = summary.value;
           }
         });
-        console.log(blogListArray)
         window.localStorage.setItem("blogs", JSON.stringify(blogListArray));
         promptDialog.open = false;
         location.reload();
       };
     }
 
-
     function editFunc(att) {
       titleToEdit = att.id.substring(1);
       promptDialog.open = true;
     }
 
-    function deleteFunc() {
-
+    function deleteFunc(att) {
+      let titleToDelete = att.id.substring(1);
+      let blogListArray = JSON.parse(localStorage.getItem("blogs"));
+      let updatedBlogListArray = [];
+      blogListArray.forEach(element => {
+          if (element.title !== titleToDelete) {
+            updatedBlogListArray.push(element);
+          }
+        });
+        window.localStorage.setItem("blogs", JSON.stringify(updatedBlogListArray));
+        location.reload();
     }
 
     let promptDialog = document.getElementById('prompt-edit');

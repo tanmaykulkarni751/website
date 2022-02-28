@@ -1,7 +1,6 @@
 import blog from './../blog/blog.js'
 
 let blogListArray;
-
 if (localStorage.getItem("blogs") == null) {
     let blog1 = new blog("Title", "May 2", "summary");
     let blog2 = new blog("Title2", "May 3", "summary2");
@@ -78,6 +77,7 @@ window.addEventListener("DOMContentLoaded", () => {
         deleteButton.innerText = "Delete";
         deleteButton.setAttribute("id", `delete-${title}`);
         editButton.setAttribute("onclick", `editFunc(${title})`)
+        deleteButton.setAttribute("onclick", `deleteFunc(${title})`)
 
         i.appendChild(editButton);
         i.appendChild(deleteButton);
