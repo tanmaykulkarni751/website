@@ -65,9 +65,6 @@ fieldset {
     border: none;
 }
 
-li > button {
-}
-
 .editCss {
     position: absolute;
     right: 0;
