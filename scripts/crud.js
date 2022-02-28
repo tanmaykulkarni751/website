@@ -2,7 +2,6 @@ import blog from './../blog/blog.js'
 
 let blogListArray;
 
-
 if (localStorage.getItem("blogs") == null) {
     let blog1 = new blog("Title", "May 2", "summary");
     let blog2 = new blog("Title2", "May 3", "summary2");
@@ -11,9 +10,6 @@ if (localStorage.getItem("blogs") == null) {
 } else {
     blogListArray = JSON.parse(localStorage.getItem("blogs"));
 }
-console.log(blogListArray);
-
-
 
 window.addEventListener("DOMContentLoaded", () => {
 
@@ -39,25 +35,9 @@ window.addEventListener("DOMContentLoaded", () => {
         if (title.value != "" && date.value != "" && summary.value != "") {
             let newBlog = new blog(title.value, date.value, summary.value);
             blogListArray[blogListArray.length] = newBlog;
+            localStorage.setItem("blogs", JSON.stringify(blogListArray));
+            console.table(JSON.parse(localStorage.getItem("blogs")))
         }
-
-        console.log(blogListArray);
-    }
-
-    function editBlog(blogTitle) {
-        console.log(blogTitle + " editBlog function")
-    }
-
-    function deleteBlog(blogTitle) {
-        blogTitle = blogTitle.substring(1);
-        console.log(blogTitle)
-        console.table(blogListArray);
-        blogListArray.forEach((blogItem) => {
-            if (blogItem.title === blogTitle) {
-                blogItem.title = "traas"
-            }
-        });
-        console.table(blogListArray);
     }
 
     let blogList = document.getElementById("blog-list");
@@ -70,12 +50,7 @@ window.addEventListener("DOMContentLoaded", () => {
         p.appendChild(document.createTextNode(blogItem.title));
         li.appendChild(p);
 
-        // li.innerHTML = `<p>${blogItem.title}</p><button id="edit">Edit</button><button id="delete">Delete</button>`
-        // a.append(document.createTextNode(blogItem.title));
-
         blogList.appendChild(li);
-        // editButton.addEventListener("click", editBlog(editButton.parentElement.id), true);
-        // deleteButton.addEventListener("click", deleteBlog(editButton.parentElement.id), true);
     });
 
     let addBlogButton = document.getElementById("prompt-button");
@@ -107,17 +82,4 @@ window.addEventListener("DOMContentLoaded", () => {
         i.appendChild(editButton);
         i.appendChild(deleteButton);
     });
-
-    // blogListArray.forEach((blogItem) => {
-    //     let blogEditButton = document.getElementById(`edit-${blogItem.title}`);
-    //     let blogDeleteButton = document.getElementById(`delete-${blogItem.title}`);
-
-    //     // blogEditButton.addEventListener("click", console.log("hi"), true);
-    // });
-
-    // let editButton = document.getElementById('edit');
-    // let deleteButton = document.getElementById('delete');
-
-    // editButton.addEventListener("click", editBlog(editButton.parentElement.id), true);
-    // deleteButton.addEventListener("click", deleteBlog(editButton.parentElement.id), true);
 });
