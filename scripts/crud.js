@@ -71,13 +71,14 @@ window.addEventListener("DOMContentLoaded", () => {
     l.forEach(function (i) {
         let title = i.id;
         let editButton = document.createElement("button");
-        editButton.innerText = "Edit";
         editButton.setAttribute("id", `edit-${title}`);
         let deleteButton = document.createElement("button");
-        deleteButton.innerText = "Delete";
         deleteButton.setAttribute("id", `delete-${title}`);
         editButton.setAttribute("onclick", `editFunc(${title})`)
         deleteButton.setAttribute("onclick", `deleteFunc(${title})`)
+        editButton.setAttribute("class", `btn fa fa-pencil marg`)
+        deleteButton.setAttribute("class", `btn fa fa-trash`)
+
 
         i.appendChild(editButton);
         i.appendChild(deleteButton);

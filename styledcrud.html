@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,200;0,400;0,600;0,700;1,400&display=swap"
+    rel="stylesheet"
+  />
+  <script src="scripts/crud.js" type="module"></script>
+  <title>CRUD Application</title>
+  <link rel="stylesheet" href="./styles/crud.css" media="screen" />
+
+</head>
+
+<body>
+  <h1 >List of Blogs</h1>
+  <ul id="blog-list"></ul>
+  <dialog id="prompt">
+    <form>
+      <fieldset>
+        <p>Enter Blog Details</p>
+        <label for="Title">Title:</label><br>
+        <input name="Title" id="title" required /><br>
+        <label for="Date">Date:</label><br>
+        <input name="Date" id="date" required /><br>
+        <label for="Summary">Summary:</label><br>
+        <input name="Summary" id="summary" required><br><br>
+      </fieldset>
+      <button id="cancel-prompt">Cancel</button>
+      <button type="submit" id="ok-prompt">Ok</button>
+    </form>
+  </dialog>
+  <button id="prompt-button">Add Blog</button>
+  <dialog id="prompt-edit">
+    <form id="editForm">
+      <fieldset>
+        <p>Enter Blog Details</p>
+        <label for="Title">Title:</label><br>
+        <input name="Title" id="editTitle" required /><br>
+        <label for="Date">Date:</label><br>
+        <input name="Date" id="editDate" required /><br>
+        <label for="Summary">Summary:</label><br>
+        <input name="Summary" id="editSummary" required><br><br>
+      </fieldset>
+      <button type="button" id="cancel-edit-prompt">Cancel</button>
+      <button type="submit" id="ok-edit-prompt">Ok</button>
+    </form>
+  </dialog>
+  <script>
+
+    let titleToEdit;
+    function promptCancel() {
+      title.required = false;
+      date.required = false;
+      summary.required = false;
+
+      setTimeout(function () {
+        promptDialog.close();
+        title.required = true;
+        date.required = true;
+        summary.required = true;
+      }, 0)
+    }
+
+    function promptOk(titleToEdit) {
+
+      let blogListArray = JSON.parse(localStorage.getItem("blogs"));
+      if (title.value != "" && date.value != "" && summary.value != "") {
+
+        blogListArray.forEach(element => {
+          if (element.title === titleToEdit) {
+            element.title = title.value;
+            element.date = date.value;
+            element.summary = summary.value;
+          }
+        });
+        window.localStorage.setItem("blogs", JSON.stringify(blogListArray));
+        promptDialog.open = false;
+        location.reload();
+      };
+    }
+
+    function editFunc(att) {
+      titleToEdit = att.id.substring(1);
+      promptDialog.open = true;
+    }
+
+    function deleteFunc(att) {
+      let titleToDelete = att.id.substring(1);
+      let blogListArray = JSON.parse(localStorage.getItem("blogs"));
+      let updatedBlogListArray = [];
+      blogListArray.forEach(element => {
+          if (element.title !== titleToDelete) {
+            updatedBlogListArray.push(element);
+          }
+        });
+        window.localStorage.setItem("blogs", JSON.stringify(updatedBlogListArray));
+        location.reload();
+    }
+
+    let promptDialog = document.getElementById('prompt-edit');
+    let form = document.getElementById('editForm');
+    function handleForm(event) { 
+      event.preventDefault();
+      promptOk(titleToEdit)
+     } 
+    form.addEventListener('submit', handleForm);
+
+    let promptCancelButton = document.getElementById('cancel-edit-prompt');
+    let promptOkButton = document.getElementById('ok-edit-prompt');
+    let title = document.getElementById('editTitle');
+    let date = document.getElementById('editDate');
+    let summary = document.getElementById('editSummary');
+
+    promptCancelButton.addEventListener("click", promptCancel, true);
+    // promptOkButton.addEventListener("click", promptOk(titleToEdit), true);
+  </script>
+</body>
+
+</html>
