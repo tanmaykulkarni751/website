@@ -43,6 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     blogListArray.forEach((blogItem) => {
         let li = document.createElement("li");
         li.setAttribute("id", `$${blogItem.title}`)
+        
 
 
         let p = document.createElement("p");
@@ -78,7 +79,6 @@ window.addEventListener("DOMContentLoaded", () => {
         deleteButton.setAttribute("onclick", `deleteFunc(${title})`)
         editButton.setAttribute("class", `btn fa fa-pencil editCss`)
         deleteButton.setAttribute("class", `btn fa fa-trash deleteCss`)
-
 
         i.appendChild(editButton);
         i.appendChild(deleteButton);

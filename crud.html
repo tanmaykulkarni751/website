@@ -57,6 +57,8 @@
         date.required = true;
         summary.required = true;
       }, 0)
+
+      location.reload();
     }
 
     function promptOk(titleToEdit) {
@@ -110,7 +112,6 @@
     let summary = document.getElementById('editSummary');
 
     promptCancelButton.addEventListener("click", promptCancel, true);
-    // promptOkButton.addEventListener("click", promptOk(titleToEdit), true);
   </script>
 </body>
 
