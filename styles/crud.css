@@ -12,7 +12,8 @@ h1 {
 }
 
 ul {
-    margin: 3vw;
+    margin-left: 3vw;
+    margin-top: 0;
     font-size: 25px;
     display: flex;
     flex-direction: column;
@@ -22,13 +23,55 @@ li {
     position: static;
 
     display: flex;
-    margin-top: 15px;
+    margin-top: 40px;
+}
+
+#prompt-button {
+    margin-left: 3vw;
+    margin-top: 40px;
+    font-size: 25px;
+    background-color: DodgerBlue; /* Blue background */
+    border: none; /* Remove borders */
+    color: white; /* White text */
+    padding: 12px 16px; /* Some padding */
+    font-size: 15px; /* Set a font size */
+    cursor: pointer; /* Mouse pointer on hover */
+}
+
+dialog {
+    position: absolute;
+    top: 50%;
+
+}
+
+#dialog-head {
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+form {
+    border: none;
+    padding: 40px;
+    
+}
+
+fieldset {
+    border: none;
 }
 
 li > button {
-    margin-left: 10px;
+}
 
-    
+.editCss {
+    position: absolute;
+    right: 0;
+    margin-right: 50vw;
+}
+
+.deleteCss {
+    position: absolute;
+    right: 0;
+    margin-right: 45vw;
 }
 
 /* Style buttons */
@@ -44,8 +87,4 @@ li > button {
   /* Darker background on mouse-over */
   .btn:hover {
     background-color: RoyalBlue;
-  }
-
-  .marg {
-      margin-left: 500px;
   }

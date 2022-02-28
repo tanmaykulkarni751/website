@@ -76,8 +76,8 @@ window.addEventListener("DOMContentLoaded", () => {
         deleteButton.setAttribute("id", `delete-${title}`);
         editButton.setAttribute("onclick", `editFunc(${title})`)
         deleteButton.setAttribute("onclick", `deleteFunc(${title})`)
-        editButton.setAttribute("class", `btn fa fa-pencil marg`)
-        deleteButton.setAttribute("class", `btn fa fa-trash`)
+        editButton.setAttribute("class", `btn fa fa-pencil editCss`)
+        deleteButton.setAttribute("class", `btn fa fa-trash deleteCss`)
 
 
         i.appendChild(editButton);

@@ -24,7 +24,7 @@
   <dialog id="prompt">
     <form>
       <fieldset>
-        <p>Enter Blog Details</p>
+        <p id="dialog-head">Enter Blog Details:</p>
         <label for="Title">Title:</label><br>
         <input name="Title" id="title" required /><br>
         <label for="Date">Date:</label><br>
@@ -32,15 +32,15 @@
         <label for="Summary">Summary:</label><br>
         <input name="Summary" id="summary" required><br><br>
       </fieldset>
-      <button id="cancel-prompt">Cancel</button>
-      <button type="submit" id="ok-prompt">Ok</button>
+      <button id="cancel-prompt" class="btn">Cancel</button>
+      <button type="submit" id="ok-prompt" class="btn">Ok</button>
     </form>
   </dialog>
   <button id="prompt-button">Add Blog</button>
   <dialog id="prompt-edit">
     <form id="editForm">
       <fieldset>
-        <p>Enter Blog Details</p>
+        <p id="dialog-head">Enter Blog Details:</p>
         <label for="Title">Title:</label><br>
         <input name="Title" id="editTitle" required /><br>
         <label for="Date">Date:</label><br>
@@ -48,8 +48,8 @@
         <label for="Summary">Summary:</label><br>
         <input name="Summary" id="editSummary" required><br><br>
       </fieldset>
-      <button type="button" id="cancel-edit-prompt">Cancel</button>
-      <button type="submit" id="ok-edit-prompt">Ok</button>
+      <button type="button" id="cancel-edit-prompt" class="btn">Cancel</button>
+      <button type="submit" id="ok-edit-prompt" class="btn">Ok</button>
     </form>
   </dialog>
   <script>
