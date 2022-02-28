@@ -88,3 +88,59 @@ li > button {
   .btn:hover {
     background-color: RoyalBlue;
   }
+
+  @media only screen and (max-width: 1100px) {
+    .editCss {
+        position: absolute;
+        right: 0;
+        margin-right: 50vw;
+    }
+    
+    .deleteCss {
+        position: absolute;
+        right: 0;
+        margin-right: 44vw;
+    }
+  }
+
+@media only screen and (max-width: 800px) {
+    .editCss {
+        position: absolute;
+        right: 0;
+        margin-right: 50vw;
+    }
+    
+    .deleteCss {
+        position: absolute;
+        right: 0;
+        margin-right: 40vw;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .editCss {
+        position: absolute;
+        right: 0;
+        margin-right: 50vw;
+    }
+    
+    .deleteCss {
+        position: absolute;
+        right: 0;
+        margin-right: 35vw;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .editCss {
+        position: absolute;
+        right: 0;
+        margin-right: 50vw;
+    }
+    
+    .deleteCss {
+        position: absolute;
+        right: 0;
+        margin-right: 30vw;
+    }
+}
