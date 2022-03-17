@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     if (res.ok) {
                         res.json().then((json) => {
                             console.log(res);
+                            document.getElementById("responseXML").innerHTML = ""
                             document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
                         });
                     } else {
@@ -65,6 +66,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     if (res.ok) {
                         res.json().then((json) => {
                             console.log(res);
+                            document.getElementById("responseXML").innerHTML = ""
                             document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
                         });
                     } else {
@@ -116,7 +118,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (res.ok) {
                     res.json().then((json) => {
                         console.log(res);
-                        document.getElementById("responseXML").innerHTML = JSON.stringify(json, null, 4);
+                        document.getElementById("responseXML").innerHTML = ""
+                        document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
                     });
                 } else {
                     console.log("error", res);
@@ -160,6 +163,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (res.ok) {
                     res.json().then((json) => {
                         console.log(res);
+                        document.getElementById("responseXML").innerHTML = ""
                         document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
                     });
                 } else {
