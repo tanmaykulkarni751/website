@@ -32,7 +32,8 @@ window.addEventListener("DOMContentLoaded", () => {
             req.send();
 
             req.onload = function () {
-                document.getElementById("response").innerHTML = JSON.stringify(req.responseText, null, 4);
+                document.getElementById("response").innerHTML = ""
+                document.getElementById("responseXML").innerHTML = JSON.stringify(req.responseText, null, 4);
             };
 
             req.onerror = function () {
@@ -80,7 +81,8 @@ window.addEventListener("DOMContentLoaded", () => {
             req.send(data);
 
             req.onload = function () {
-                document.getElementById("response").innerHTML = JSON.stringify(req.responseText, null, 4);
+                document.getElementById("response").innerHTML = ""
+                document.getElementById("responseXML").innerHTML = JSON.stringify(req.responseText, null, 4);
             };
 
             req.onerror = function () {
@@ -114,7 +116,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (res.ok) {
                     res.json().then((json) => {
                         console.log(res);
-                        document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
+                        document.getElementById("responseXML").innerHTML = JSON.stringify(json, null, 4);
                     });
                 } else {
                     console.log("error", res);
@@ -131,7 +133,8 @@ window.addEventListener("DOMContentLoaded", () => {
             req.send(data);
 
             req.onload = function () {
-                document.getElementById("response").innerHTML = JSON.stringify(req.responseText);
+                document.getElementById("response").innerHTML = ""
+                document.getElementById("responseXML").innerHTML = JSON.stringify(req.responseText);
             };
 
             req.onerror = function () {
@@ -173,7 +176,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 req.send();
     
                 req.onload = function () {
-                    document.getElementById("response").innerHTML = JSON.stringify(req.responseText);
+                    document.getElementById("response").innerHTML = ""
+                    document.getElementById("responseXML").innerHTML = JSON.stringify(req.responseText);
                 };
     
                 req.onerror = function () {
