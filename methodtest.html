@@ -12,39 +12,19 @@
         <fieldset>
           <p>Form</p>
           <label for="id">Id:</label><br>
-          <input name="id" id="editId"  /><br>
+          <input name="id" id="editId" required /><br>
           <label for="article_name">Article Name:</label><br>
-          <input name="article_name" id="editArticleName"  /><br>
+          <input name="article_name" id="editArticleName" required /><br>
           <label for="article_body">Article Body:</label><br>
-          <textarea name="article_body" id="editArticleBody" ></textarea><br><br>
+          <textarea name="article_body" id="editArticleBody" required ></textarea><br><br>
           <label for="date">Date:</label><br>
           <output id="date"></output>
         </fieldset>
-        <button id="postBtn">postBtn</button>
-        <button type="button" id="getBtn" onClick="foobar(this);">getBtn</button>
-        <button id="putBtn">putBtn</button>
-        <button id="deleteBtn">deleteBtn</button>
+        <button type="button" id="getBtn">Get</button>
+        <button type="button" id="postBtn">Post</button>
+        <button type="button" id="putBtn">Put</button>
+        <button type="button" id="deleteBtn">Delete</button>
       </form>
       <pre id=response></pre>
     </body>
-    <script>
-        function foobar() {
-    fetch("https://httpbin.org/get", {
-        method: "GET"
-      })
-      .catch(() => {
-        console.log("Fail zone");
-      })
-      .then((res) => {
-        if (res.ok) {
-          res.json().then((json) => {
-            document.getElementById("response").innerHTML = JSON.stringify(json, null, 2);
-          });
-        } else {
-          console.log("error", res);
-        }
-      });
-  }
-  
-    </script>
 </html>
