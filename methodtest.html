@@ -18,6 +18,10 @@
           <label for="article_body">Article Body:</label><br>
           <textarea name="article_body" id="editArticleBody" required ></textarea><br><br>
           <label for="date">Date:</label><br>
+          <select name="requestType" id="requestType">
+            <option value="fetch">Fetch</option>
+            <option value="XMLHttpRequest">XMLHttpRequest</option>
+          </select>
           <output id="date"></output>
         </fieldset>
         <button type="button" id="getBtn">Get</button>

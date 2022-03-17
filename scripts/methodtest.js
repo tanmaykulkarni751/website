@@ -1,22 +1,44 @@
 window.addEventListener("DOMContentLoaded", () => {
 
     function getReq() {
-        fetch(`https://httpbin.org/get?id=${_id.value}`, {
-            method: "GET"
-        })
-            .catch((e) => {
-                console.log(e);
+
+
+        if (_requestType.value === "fetch") {
+        date.value = new Date();
+
+            fetch(`https://httpbin.org/get?id=${_id.value}`, {
+                method: "GET"
             })
-            .then((res) => {
-                if (res.ok) {
-                    res.json().then((json) => {
-                        console.log(res);
-                        document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
-                    });
-                } else {
-                    console.log("error", res);
-                }
-            });
+                .catch((e) => {
+                    console.log(e);
+                })
+                .then((res) => {
+                    if (res.ok) {
+                        res.json().then((json) => {
+                            console.log(res);
+                            document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
+                        });
+                    } else {
+                        console.log("error", res);
+                    }
+                });
+        } else {
+        date.value = new Date();
+
+            let req = new XMLHttpRequest();
+
+            req.open('GET', `https://httpbin.org/get?id=${_id.value}`);
+
+            req.send();
+
+            req.onload = function () {
+                document.getElementById("response").innerHTML = JSON.stringify(req.responseText, null, 4);
+            };
+
+            req.onerror = function () {
+                alert("Request failed");
+            };
+        }
     }
 
     function postReq() {
@@ -27,23 +49,45 @@ window.addEventListener("DOMContentLoaded", () => {
             articleBody: _articleBody.value
         }
 
-        fetch("https://httpbin.org/post", {
-            method: "POST",
-            body: JSON.stringify(data),
-        })
-            .catch((e) => {
-                console.log(e);
+        if (_requestType.value === "fetch") {
+
+            date.value = new Date();
+
+            fetch("https://httpbin.org/post", {
+                method: "POST",
+                body: JSON.stringify(data),
             })
-            .then((res) => {
-                if (res.ok) {
-                    res.json().then((json) => {
-                        console.log(res);
-                        document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
-                    });
-                } else {
-                    console.log("error", res);
-                }
-            });
+                .catch((e) => {
+                    console.log(e);
+                })
+                .then((res) => {
+                    if (res.ok) {
+                        res.json().then((json) => {
+                            console.log(res);
+                            document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
+                        });
+                    } else {
+                        console.log("error", res);
+                    }
+                });
+        } else {
+            date.value = new Date();
+
+            let req = new XMLHttpRequest();
+
+            req.open('POST', `https://httpbin.org/post`);
+
+            req.send(data);
+
+            req.onload = function () {
+                document.getElementById("response").innerHTML = JSON.stringify(req.responseText, null, 4);
+            };
+
+            req.onerror = function () {
+                alert("Request failed");
+            };
+
+        }
     }
 
     function putReq() {
@@ -53,6 +97,11 @@ window.addEventListener("DOMContentLoaded", () => {
             articleName: _articleName.value,
             articleBody: _articleBody.value
         }
+
+        if (_requestType.value === "fetch") {
+
+            date.value = new Date();
+
 
         fetch(`https://httpbin.org/put?id=${data.id}`, {
             method: "PUT",
@@ -71,9 +120,32 @@ window.addEventListener("DOMContentLoaded", () => {
                     console.log("error", res);
                 }
             });
+
+        } else {
+            date.value = new Date();
+
+            let req = new XMLHttpRequest();
+
+            req.open('PUT', `https://httpbin.org/put?id=${data.id}`);
+
+            req.send(data);
+
+            req.onload = function () {
+                document.getElementById("response").innerHTML = JSON.stringify(req.responseText);
+            };
+
+            req.onerror = function () {
+                alert("Request failed");
+            };
+
+        }
     }
 
     function deleteReq() {
+
+        if (_requestType.value === "fetch") {
+            date.value = new Date();
+
 
         fetch(`https://httpbin.org/delete?id=${_id.value}`, {
             method: "DELETE",
@@ -91,11 +163,31 @@ window.addEventListener("DOMContentLoaded", () => {
                     console.log("error", res);
                 }
             });
+        } else {
+            date.value = new Date();
+    
+                let req = new XMLHttpRequest();
+    
+                req.open('DELETE', `https://httpbin.org/delete?id=${_id.value}`);
+    
+                req.send();
+    
+                req.onload = function () {
+                    document.getElementById("response").innerHTML = JSON.stringify(req.responseText);
+                };
+    
+                req.onerror = function () {
+                    alert("Request failed");
+                };
+            }
     }
 
     let _id = document.getElementById("editId");
     let _articleName = document.getElementById("editArticleName");
     let _articleBody = document.getElementById("editArticleBody");
+    let _date = document.getElementById("date");
+
+    let _requestType = document.getElementById("requestType");
 
     let getBtn = document.getElementById("getBtn");
     let postBtn = document.getElementById("postBtn");
