@@ -16,7 +16,6 @@ window.addEventListener("DOMContentLoaded", () => {
                     if (res.ok) {
                         res.json().then((json) => {
                             console.log(res);
-                            document.getElementById("responseXML").innerHTML = ""
                             document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
                         });
                     } else {
@@ -33,8 +32,8 @@ window.addEventListener("DOMContentLoaded", () => {
             req.send();
 
             req.onload = function () {
-                document.getElementById("response").innerHTML = ""
-                document.getElementById("responseXML").innerHTML = JSON.stringify(req.responseText, null, 4);
+                let res = JSON.parse(req.responseText);
+                document.getElementById("response").innerHTML = JSON.stringify(res, null, 4);
             };
 
             req.onerror = function () {
@@ -66,7 +65,6 @@ window.addEventListener("DOMContentLoaded", () => {
                     if (res.ok) {
                         res.json().then((json) => {
                             console.log(res);
-                            document.getElementById("responseXML").innerHTML = ""
                             document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
                         });
                     } else {
@@ -83,8 +81,8 @@ window.addEventListener("DOMContentLoaded", () => {
             req.send(data);
 
             req.onload = function () {
-                document.getElementById("response").innerHTML = ""
-                document.getElementById("responseXML").innerHTML = JSON.stringify(req.responseText, null, 4);
+                let res = JSON.parse(req.responseText);
+                document.getElementById("response").innerHTML = JSON.stringify(res, null, 4);
             };
 
             req.onerror = function () {
@@ -118,7 +116,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (res.ok) {
                     res.json().then((json) => {
                         console.log(res);
-                        document.getElementById("responseXML").innerHTML = ""
                         document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
                     });
                 } else {
@@ -136,8 +133,8 @@ window.addEventListener("DOMContentLoaded", () => {
             req.send(data);
 
             req.onload = function () {
-                document.getElementById("response").innerHTML = ""
-                document.getElementById("responseXML").innerHTML = JSON.stringify(req.responseText);
+                let res = JSON.parse(req.responseText);
+                document.getElementById("response").innerHTML = JSON.stringify(res, null, 4);
             };
 
             req.onerror = function () {
@@ -163,7 +160,6 @@ window.addEventListener("DOMContentLoaded", () => {
                 if (res.ok) {
                     res.json().then((json) => {
                         console.log(res);
-                        document.getElementById("responseXML").innerHTML = ""
                         document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
                     });
                 } else {
@@ -180,8 +176,8 @@ window.addEventListener("DOMContentLoaded", () => {
                 req.send();
     
                 req.onload = function () {
-                    document.getElementById("response").innerHTML = ""
-                    document.getElementById("responseXML").innerHTML = JSON.stringify(req.responseText);
+                    let res = JSON.parse(req.responseText);
+                    document.getElementById("response").innerHTML = JSON.stringify(res, null, 4);
                 };
     
                 req.onerror = function () {
