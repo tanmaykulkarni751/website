@@ -1,7 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
 
-    function get() {
-        fetch("https://httpbin.org/get", {
+    function getReq() {
+        fetch(`https://httpbin.org/get?id=${_id.value}`, {
             method: "GET"
         })
             .catch((e) => {
@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
             });
     }
 
-    function post() {
+    function postReq() {
 
         let data = {
             id: _id.value,
@@ -46,6 +46,53 @@ window.addEventListener("DOMContentLoaded", () => {
             });
     }
 
+    function putReq() {
+
+        let data = {
+            id: _id.value,
+            articleName: _articleName.value,
+            articleBody: _articleBody.value
+        }
+
+        fetch(`https://httpbin.org/put?id=${data.id}`, {
+            method: "PUT",
+            body: JSON.stringify(data),
+        })
+            .catch((e) => {
+                console.log(e);
+            })
+            .then((res) => {
+                if (res.ok) {
+                    res.json().then((json) => {
+                        console.log(res);
+                        document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
+                    });
+                } else {
+                    console.log("error", res);
+                }
+            });
+    }
+
+    function deleteReq() {
+
+        fetch(`https://httpbin.org/delete?id=${_id.value}`, {
+            method: "DELETE",
+        })
+            .catch((e) => {
+                console.log(e);
+            })
+            .then((res) => {
+                if (res.ok) {
+                    res.json().then((json) => {
+                        console.log(res);
+                        document.getElementById("response").innerHTML = JSON.stringify(json, null, 4);
+                    });
+                } else {
+                    console.log("error", res);
+                }
+            });
+    }
+
     let _id = document.getElementById("editId");
     let _articleName = document.getElementById("editArticleName");
     let _articleBody = document.getElementById("editArticleBody");
@@ -55,8 +102,8 @@ window.addEventListener("DOMContentLoaded", () => {
     let putBtn = document.getElementById("putBtn");
     let deleteBtn = document.getElementById("deleteBtn");
 
-    getBtn.addEventListener("click", get, true);
-    postBtn.addEventListener("click", post, true);
-    putBtn.addEventListener("click", post, true);
-    deleteBtn.addEventListener("click", post, true);
+    getBtn.addEventListener("click", getReq, true);
+    postBtn.addEventListener("click", postReq, true);
+    putBtn.addEventListener("click", putReq, true);
+    deleteBtn.addEventListener("click", deleteReq, true);
 });
